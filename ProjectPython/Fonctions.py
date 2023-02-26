@@ -2,6 +2,7 @@
 from re import compile
 from Fonctions import *
 
+
 # fonction verifiant la validité d'un numero
 def v_numero(num):
     if len(num) != 7 or not num.isupper():
@@ -11,7 +12,9 @@ def v_numero(num):
     else:
         return True
 
-# fonction verifiant la validité d'un prenom
+
+
+#fonction verifiant la validité d'un prenom
 def v_prenom(prenom):
     prenom = prenom.strip()
     if len(prenom) < 3 or not prenom[0].isalpha():
@@ -19,7 +22,9 @@ def v_prenom(prenom):
     return True
 
 
-# fonction verifiant la validité d'un nom
+
+
+#fonction verifiant la validité d'un nom
 def v_nom(nom):
     nom = nom.strip()
     if len(nom) < 2 or not nom[0].isalpha():
@@ -27,7 +32,9 @@ def v_nom(nom):
     return True
 
 
-# fonctions verifiant les classes
+
+
+#fonctions verifiant les classes
 def v_classe(classe):
     if classe =='':
         return False
@@ -37,14 +44,18 @@ def v_classe(classe):
         return False
     return True
 
-# fonction permettant de changer le format des classes
+
+
+#fonction permettant de changer le format des classes
 def change_classe(format):
     if v_classe(format):
-        return format[0] + 'em' + format[-1].upper()
+        return format[0] + 'eme' + format[-1].upper()
 
 
 
-# fonction permettant de mettre dans un dictionnaire les matieres et les notes
+
+
+#fonction permettant de mettre dans un dictionnaire les matieres et les notes
 def recup_notes(les_notes):
     main_dico = dict()
     moy = []
@@ -95,7 +106,9 @@ def recup_notes(les_notes):
         return False
 
 
-# une fonction qui est utilisee pour corriger une erreur dans une note
+
+
+#une fonction qui est utilisee pour corriger une erreur dans une note
 def change_note(note):
     new_note = []
     if note.strip() !='':
@@ -123,20 +136,21 @@ def change_note(note):
         notes[1] = examen
         notes = ':'.join(notes)
         k = '['.join([matiere, notes]) + ']'
-        print(k)
+        #print(k)
         new_note.append(k)
     return '#'.join(new_note)
 
-
-
-# tout le code en dessous  permet a la verification des dates
+#tout le code en dessous  permet a la verification des dates
 monthabet = {
     'ja': 1,'f': 2,'mar':3,'av':4,
     'mai':5,'juin':6,'juil':7,'ao':8,
     's':9,'o':10,'n':11,'d':12
 }
 
-# fonction qui permet de matcher une date et de dispatcher ses composants
+
+
+
+#fonction qui permet de matcher une date et de dispatcher ses composants
 def separator(text):
     pattern_us = r'(\d{2,4})(\s|[/.-])(\w+|\d+)(\s|[/.-])(\d{1,2})' #ceci est le format des dates possibles
     pattern_fr = r'(\d{1,2})(\s|[/.-])(\w+|\d+)(\s|[/.-])(\d{2,4})' #ceci est le format des dates possibles
@@ -151,12 +165,17 @@ def separator(text):
 
 
 
-# fonction qui renvoie True si l'annee est bissextile
+
+
+#fonction qui renvoie True si l'annee est bissextile
 def bissex(year):
     year = int(year)
     if year%400 == 0 or (year%4==0 and year%100 !=0):
         return True
     return False
+
+
+
 
 # fonction pour trouver la valeur en int du mois
 def find_month(month):
@@ -169,7 +188,11 @@ def find_month(month):
                 return monthabet[abbr]
 
 
-# fonction pour trouver l'annee avec 4 chiffres
+
+
+
+
+#fonction pour trouver l'annee avec 4 chiffres
 def find_year(annee):
     if len(annee) == 4:
         return annee
@@ -178,6 +201,9 @@ def find_year(annee):
             return '19' + str(annee)
         else:
             return '20' + str(annee)
+
+
+
 
 # fonctions qui verifie la validité d'une date
 # on peut remplacer  cette fonction par la fonction datetime.date()
@@ -199,7 +225,8 @@ def valide_date(jour, mois, annee):
     return valid
 
 
-# la fonction qui regroupe toutes les autres fonctions pour la date
+
+#la fonction qui regroupe toutes les autres fonctions pour la date
 def v_date(text):
     try:
         jour, sep1, mois, sep2, annee = separator(text)
@@ -210,6 +237,7 @@ def v_date(text):
         return False
 
 
+
 def change_dformat(text):
     jour, sep1, mois, sep2, annee = separator(text)
     mois = find_month(mois)
@@ -218,58 +246,65 @@ def change_dformat(text):
     return f"{annee}-{mois}-{jour}"
 
 
-# fonction pour afficher les erreurs
+
+
+#fonction pour afficher les erreurs
 def affiche_errors(mydictionnaire):
     if len(mydictionnaire) != 0:
         for k in mydictionnaire:
             if len(mydictionnaire[k]) != 0:
-                print(str(k).ljust(150 ,"-"))
+                # print(str(k).ljust(150 ,"-"))
                 for n in mydictionnaire[k]:
                         print(n, ':',  mydictionnaire[k][n])
                         print()
 
-# headers = ['N°','CODE', 'Numero', 'Nom', 'Prenom', 'Date de naissance', 'Classe', 'Note']
+headers = ['N°','CODE', 'Numero', 'Nom', 'Prenom', 'Date de naissance', 'Classe', 'Note']
 
-# fonction affichant les elements d'un dico en ligne et colonne
+
+
+#fonction affichant les elements d'un dico en ligne et colonne
 def affiche_info(dico):
-    # for n in headers:
-    #     print(n.ljust(2) + '|', end=" ")
-    print('N°'.ljust(2),'CODE'.rjust(6), 'Numero'.rjust(12), 'Nom'.rjust(6), 'Prenom'.rjust(14), 'Date de naissance'.rjust(22), 'Classe'.rjust(8), end="")
-    print()
-    for row in dico:
-        if row == 1:
-            print(str(row) + ' ', end=" ] ")
-        else:
-            print(row, end=" ] ")
-        for line in dico[row]:
-            if line == 'Note':
-                print()
-                print('Note: ')
-                print(str(dico[row][line]))
+        # for n in headers:
+        #     print(n.ljust(2) + '|', end=" ")
+        # print('N°'.ljust(2),'CODE'.rjust(6), 'Numero'.rjust(12), 'Nom'.rjust(6), 'Prenom'.rjust(14), 'Date de naissance'.rjust(22), 'Classe'.rjust(8), end="")
+        # print()
+        for row in dico:
+            if row == 1:
+                print(str(row) + ' ', end=" ] ")
             else:
-                print(str(dico[row][line]).ljust(8), end=" | ")
-        print()
-        print()
+                print(row, end=" ] ")
+            for line in dico[row]:
+                if line == 'Note':
+                # print()
+                # print('Note: ')
+                # print(str(dico[row][line]))
+            #else:
+        #         print(str(dico[row][line]).ljust(8), end=" | ")
+        # print()
+        # print()
 
-# fonction affichant les donnees valides
+
+
+
+#fonction affichant les donnees valides
 def affiche_infov(dico):
-    print('Id'.center(2),'CODE'.center(23), 'Numero'.center(15), 'Nom'.center(28), 'Prenom'.center(10), 'Date de naissance'.center(29), 'Classe'.center(15),'Note'.center(11), end="\n")
-    print("_".center(140,'_'))
-    for row in dico:
-        if row == 1:
-            print(str(row) + ' ', end=" ] ")
-        else:
-            print(row, end=" ] ")
-        for line in dico[row]:
-            if line == 'Note':
+    # print('CODE', 'Numero', 'Nom', 'Prenom','Date de naissance','Classe','Note', end="\n")
+    # print('_')
+        for row in dico:
+            if row == 1:
+            #print(str(row) + ' ', end=" ] ")        
+            #print(row, end=" ] ")
+                for line in dico[row]:
+                    if line == 'Note':
                 # print('Moyenne G: ',end='')
-                print(str(dico[row][line]['moyenne_generale']))
-            else:
-                print(str(dico[row][line]).center(18), end=" | ")
-        # print()
-        print("_".center(140,'_'))
-        # print()
-# fonction permettant d'afficher une ligne en renseignant son numero
+                # print(str(dico[row][line]['moyenne_generale']))
+
+                #print(str(dico[row][line]), end=" | ")
+
+
+
+
+#fonction permettant d'afficher une ligne en renseignant son numero
 def affiche_numero(maindico, numero):
     founded = ''
     numero =  numero.strip()
@@ -278,21 +313,27 @@ def affiche_numero(maindico, numero):
             founded = line
             break
     if founded:
-        print(numero.center(100, '*'))
+        #print(numero.center(100, '*'))
         for info in maindico[int(founded)]:
             print(info, maindico[founded][info])
 
-# fonction qui affiche les elemnts d'un dico
+
+
+#fonction qui affiche les elemnts d'un dico
 def affiche_line(line):
     n = 10
     for cell in line:
         if cell == 'Note':
-            print(str(line[cell]['moyenne_generale']).center(n))
-        else:
-            print(line[cell].center(n + 1), end=" |")
-    print("_".center(100,'_'))
+            # print(str(line[cell]['moyenne_generale']).center(n))
+    #     else:
+    #         print(line[cell].center(n + 1), end=" |")
+    # print("_")
 
-# fonction qui affiche les 5 premiers eleves
+
+
+
+
+#fonction qui affiche les 5 premiers eleves
 def affiche_5premiers(maindico, n=5):
     peps = []
     p = 12
@@ -300,18 +341,20 @@ def affiche_5premiers(maindico, n=5):
         peps.append((float(maindico[cle]['Note']['moyenne_generale']), cle))
     peps.sort(reverse=True)
     peps = peps[:n]
-    print(peps)
-    print('CODE'.center(p +2), 'Numero'.center(p + 3), 'Nom'.center(p), 'Prenom'.center(p-4), 'Date de naissance'.center(p + 12), 'Classe'.center(p-4),  'Moyenne'.center(p + 5), end="\n")
-    print("_".center(100,'_'))
+    # print(peps)
+    # print('CODE'.center(p +2), 'Numero'.center(p + 3), 'Nom'.center(p), 'Prenom'.center(p-4), 'Date de naissance'.center(p + 12), 'Classe'.center(p-4),  'Moyenne'.center(p + 5), end="\n")
+    # print("_".center(100,'_'))
     compt = 0
     for num in peps:
         for cle in maindico:
             if cle == num[1]:
                 compt +=1
-                print(compt, end=" |")
+                #print(compt, end=" |")
                 affiche_line(maindico[cle])
 
-# fonction qui affiche un element du dico invalide en renseignant son id
+
+
+#fonction qui affiche un element du dico invalide en renseignant son id
 def affiche_invalide(dico:dict, id:int):
     founded = ''
     for line in dico:
@@ -320,10 +363,12 @@ def affiche_invalide(dico:dict, id:int):
             break
     if founded:
         print(str(founded).center(170, '*'))
-        # affiche_line(dico[founded])
+        affiche_line(dico[founded])
         print(dico[founded])
 
-# fonction retournant un ligne invalide dans le dico invalide
+
+
+#fonction retournant un ligne invalide dans le dico invalide
 def return_invalide(dico:dict, id:int):
     founded = ''
     for line in dico:
@@ -334,7 +379,7 @@ def return_invalide(dico:dict, id:int):
         return dico[founded]
 
 
-# fonction qui permet de changer les champs ou il ya des erreurs
+#fonction qui permet de changer les champs ou il ya des erreurs
 def modifier(dico):
     for key in dico:
         if key.lower() == 'numero':
@@ -358,67 +403,33 @@ def modifier(dico):
                 dico[key] = input("Entrer une date valide: ")
                 naissance = v_date(str(dico[key]))
         elif key.lower() == 'classe':
-            classe = v_classe(dico[key])
-            if classe == False:
-                dico[key] = input("Entrer une classe valide: ")
-                classe = v_classe(dico[key])
+             classe = v_classe(dico[key])
+             if classe == False:
+                 dico[key] = input("Entrer une classe valide: ")
+                 classe = v_classe(dico[key])
         elif key.lower() == 'note'  :
-            y_note = dico[key]
-            note = recup_notes(str(dico[key]))
-            if note == False:
-                # dico[key] = input(str(dico[key]) + "Entrer des notes valides: ")
-                dico[key] = change_note(str(dico[key]))
-                note = recup_notes(dico[key])
-            else:
-                note = y_note
-    print(num, nom, prenom, naissance, classe, note)
+             y_note = dico[key]
+             note = recup_notes(str(dico[key]))
+             if note == False:
+                 # dico[key] = input(str(dico[key]) + "Entrer des notes valides: ")
+                 dico[key] = change_note(str(dico[key]))
+                 note = recup_notes(dico[key])
+             else:
+                 note = y_note
+    # print(num, nom, prenom, naissance, classe, note)
     if num and nom and prenom and naissance and classe and note:
-        return dico
+         return dico
     else:
-        trans = input(" Il y a toujours une erreur !!!!\nVoulez vous continue à modifier yes/no: ")
-        if trans.lower() == 'yes':
-            modifier(dico)
-        else:
-            return False
+         trans = input(" Il y a toujours une erreur !!!!\nVoulez vous continue à modifier yes/no: ")
+         if trans.lower() == 'yes':
+             modifier(dico)
+         else:
+             return False
 
-    #
-    # for key in dico:
-    #     if key.lower()   == 'numero':
-    #         new_numero = input(dico[key]+": ")
-    #         if v_numero(new_numero):
-    #             dico[key] = new_numero
-    #     elif key.lower() == 'nom'   :
-    #         new_nom = input(dico[key]+": ")
-    #         if v_nom(new_nom):
-    #             dico[key] = new_nom
-    #     elif key.lower() == 'prenom':
-    #         new_prenom = input(dico[key]+": ")
-    #         if v_prenom(new_prenom):
-    #             dico[key] = new_prenom
-    #     elif key.lower() == 'date de naissance':
-    #         new_naissance = input(dico[key]+": ")
-    #         if v_date(new_naissance):
-    #             dico[key] = new_naissance
-    #     elif key.lower() == 'classe':
-    #         if not v_classe(dico[key]):
-    #             dico[key] = change_classe(dico[key])
-    #     elif key.lower() == 'note'  :
-    #         if dico[key] == False:
-    #             new_notes = input("Les notes sont " + str(dico[key])+ ": ")
-    # return dico
-
-# verifie si une ligne_invalide est valide avant de permettre de le transferer dans les lignes valides
+    
+#verifie si une ligne_invalide est valide avant de permettre de le transferer dans les lignes valides
 def isvalid(numero, nom, prenom, classe, naissance, note):
     if v_numero(numero) and v_nom(nom) and v_prenom(prenom) and v_date(date) and v_note(note):
         return True
     else:
         return False
-
-    # for line in maindico:
-    #     # print(line, maindico[line]['Note'])
-    #     for mat in maindico[line]['Note']:
-    #         # print(mat, maindico[line]['Note'][mat])
-    #         for moy in maindico[line]['Note'][mat]:
-    #             if moy == 'moyenne':
-    #                 print(mat, maindico[line]['Note'][mat][moy])
-    #     print()
