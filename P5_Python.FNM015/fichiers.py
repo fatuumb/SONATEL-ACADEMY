@@ -1,9 +1,9 @@
 #Importez les fonctions et modules nécessaires.
-import Fonctions as pf
+import Fonctions as name
 
 from csv import DictReader
 
-mainfichier_csv = dict()
+nameinfichier_csv = dict()
 compt = 0
 tab=[]
 with open('Project.csv', 'r') as fichier_csv:
@@ -11,7 +11,7 @@ with open('Project.csv', 'r') as fichier_csv:
     fichier_csv_reader = DictReader(fichier_csv)
     for line in fichier_csv_reader:
         tab.append(line)
-        #mainfichier_csv.setdefault(compt, line)
+        #nameinfichier_csv.setdefault(compt, line)
         #compt +=1
         # for key, value in line.items():
         #     print(key, value)
@@ -24,53 +24,53 @@ with open('Project.csv', 'r') as fichier_csv:
 lignes_valides = dict()
 lignes_non_valides = dict()
 
-for k in mainfichier_csv.keys():
-#for k in mainfichier_csv.keys():
+for k in nameinfichier_csv.keys():
+#for k in nameinfichier_csv.keys():
     
     sub_errors = dict()
 
 isvalid = True
     
-for subk in mainfichier_csv[k].keys():
+for subk in nameinfichier_csv[k].keys():
     if subk.lower()  == 'numero':
-            numero = pf.v_numero(mainfichier_csv[k][subk])
+            numero = name.v_numero(nameinfichier_csv[k][subk])
 
 
             if numero == False:
-                sub_errors.setdefault('numero', mainfichier_csv[k][subk])
+                sub_errors.setdefault('numero', nameinfichier_csv[k][subk])
 
 
     elif subk.lower() == 'nom'   :
-        nom = pf.v_nom(mainfichier_csv[k][subk])
+        nom = name.v_nom(nameinfichier_csv[k][subk])
 
 
     if nom == False:
-                sub_errors.setdefault('nom', mainfichier_csv[k][subk])
+                sub_errors.setdefault('nom', nameinfichier_csv[k][subk])
 
 
 
     elif subk.lower() == 'prenom':
-            prenom = pf.v_prenom(mainfichier_csv[k][subk])
+            prenom = name.v_prenom(nameinfichier_csv[k][subk])
 
 
             if prenom == False:
-                sub_errors.setdefault('prenom', mainfichier_csv[k][subk])
+                sub_errors.setdefault('prenom', nameinfichier_csv[k][subk])
 
 
     elif subk.lower() == 'date de naissance':
-            naissance = pf.v_date(str(mainfichier_csv[k][subk]))
+            naissance = name.v_date(str(nameinfichier_csv[k][subk]))
 
 
             if naissance == False:
-                sub_errors.setdefault('date de naissance', mainfichier_csv[k][subk])
+                sub_errors.setdefault('date de naissance', nameinfichier_csv[k][subk])
 
 
     elif subk.lower() == 'classe':
-            classe = pf.v_classe(mainfichier_csv[k][subk])
+            classe = name.v_classe(nameinfichier_csv[k][subk])
 
 
             if classe == False:
-                sub_errors.setdefault('classe', mainfichier_csv[k][subk])
+                sub_errors.setdefault('classe', nameinfichier_csv[k][subk])
 
 
             elif subk.lower() == 'note'  :
@@ -80,30 +80,30 @@ for subk in mainfichier_csv[k].keys():
         # ici on parcours toutes les lignes et on verifie pour chaque les elements
         #   qui sont valident ou pas et on les stocke dans des dictionnaires
         
-                bool = str(mainfichier_csv[k][subk])
-                notes = pf.recup_notes(str(mainfichier_csv[k][subk]))
-            # mainfichier_csv[k][subk] = notes
+                bool = str(nameinfichier_csv[k][subk])
+                notes = name.recup_notes(str(nameinfichier_csv[k][subk]))
+            # nameinfichier_csv[k][subk] = notes
         
         
             if notes == False:
-                        sub_errors.setdefault('notes', str(mainfichier_csv[k][subk]))
+                        sub_errors.setdefault('notes', str(nameinfichier_csv[k][subk]))
         
         
             else:
-                        mainfichier_csv[k][subk] = notes
+                        nameinfichier_csv[k][subk] = notes
                         sub_errors.setdefault(k, sub_errors)
         
         
         
             if numero and nom and prenom and naissance and classe and notes:
-                mainfichier_csv[k]['Classe'] = pf.change_classe(mainfichier_csv[k]['Classe'])
-                # mettre ici le formatage des naissances
-                mainfichier_csv[k]['Date de naissance'] = pf.change_dformat(mainfichier_csv[k]['Date de naissance'])
-                lignes_valides.setdefault(k, mainfichier_csv[k])
+                nameinfichier_csv[k]['Classe'] = name.change_classe(nameinfichier_csv[k]['Classe'])
+                # mettre ici le fornametage des naissances
+                nameinfichier_csv[k]['Date de naissance'] = name.change_dfornamet(nameinfichier_csv[k]['Date de naissance'])
+                lignes_valides.setdefault(k, nameinfichier_csv[k])
 
 
 else:
-        lignes_non_valides.setdefault(k, mainfichier_csv[k])
+        lignes_non_valides.setdefault(k, nameinfichier_csv[k])
 
 
 
@@ -127,12 +127,12 @@ def modif_menu():
     if subchoix == 1:
         modif_id = int(input("Entrez le numero de la ligne �  modifier: ").strip())
         print("La ligne invalide est ")
-        pf.affiche_invalide(lignes_non_valides, modif_id)
-        tovalidate = pf.return_invalide(lignes_non_valides, modif_id)
+        name.affiche_invalide(lignes_non_valides, modif_id)
+        tovalidate = name.return_invalide(lignes_non_valides, modif_id)
         # print(tovalidate)
         print("Les erreurs �  corriger: ")
-        pf.affiche_invalide(sub_errors, modif_id)
-        tovalidate = pf.modifier(tovalidate)
+        name.affiche_invalide(sub_errors, modif_id)
+        tovalidate = name.modifier(tovalidate)
         if tovalidate == False:
             print("La modification est annulée")
             modif_menu()
@@ -143,10 +143,10 @@ def modif_menu():
             print("La ligne " + str(modif_id) + "est ajoutée aux lignes valides avec succees")
             modif_menu()
     elif subchoix == 2:
-        pf.affiche_errors(sub_errors)
+        name.affiche_errors(sub_errors)
         modif_menu()
     elif subchoix == 3:
-        pf.affiche_info(lignes_non_valides)
+        name.affiche_info(lignes_non_valides)
         modif_menu()
     elif subchoix == 4:
         menu()
@@ -161,9 +161,9 @@ def menu():
         print("""
             1. Afficher les lignes valides
             2. Afficher les lignes invalides
-            3. Afficher une information par numero
+            3. Afficher une infornametion par numero
             4. Afficher les 5 premiers
-            5. Modifier une information invalides
+            5. Modifier une infornametion invalides
             6. Mettre les lignes valides dans la base de donnees
             7. Afficher les infos d'une table au choix
             Ps: Mettez 0 ou un autre chiffre pour quitter
@@ -175,26 +175,26 @@ def menu():
 
         if choix == 1:
             print("Affichage des lignes valides")
-            pf.affiche_infov(lignes_valides)
+            name.affiche_infov(lignes_valides)
             menu()
         elif choix == 2:
             print("Affichage des lignes invalides")
-            pf.affiche_info(lignes_non_valides)
+            name.affiche_info(lignes_non_valides)
             print("Voir la liste des erreurs ? oui: pour voir /non: pour aller au menu")
             mychoix = input().lower()
             if mychoix =='yes':
-                pf.affiche_errors(sub_errors)
+                name.affiche_errors(sub_errors)
                 menu()
             else:
                 menu()
         elif choix == 3:
-            print("Affichage d'une information par numero")
+            print("Affichage d'une infornametion par numero")
             numero = input("Entrer le numero �  afficher: ").upper().strip()
-            pf.affiche_numero(lignes_valides, numero)
+            name.affiche_numero(lignes_valides, numero)
             menu()
         elif choix == 4:
             print("Affichage des cinq premiers")
-            pf.affiche_5premiers(lignes_valides)
+            name.affiche_5premiers(lignes_valides)
             menu()
         elif choix == 5:
             print("Modification des elements invalides")
