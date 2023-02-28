@@ -1,6 +1,6 @@
 # importation 
 from re import compile
-from Fonctions import *
+#from Fonctions import *
 
 
 # fonction verifiant la validité d'un numero
@@ -264,10 +264,7 @@ headers = ['N°','CODE', 'Numero', 'Nom', 'Prenom', 'Date de naissance', 'Classe
 
 #fonction affichant les elements d'un dico en ligne et colonne
 def affiche_info(dico):
-        # for n in headers:
-        #     print(n.ljust(2) + '|', end=" ")
-        # print('N°'.ljust(2),'CODE'.rjust(6), 'Numero'.rjust(12), 'Nom'.rjust(6), 'Prenom'.rjust(14), 'Date de naissance'.rjust(22), 'Classe'.rjust(8), end="")
-        # print()
+      
         for row in dico:
             if row == 1:
                 print(str(row) + ' ', end=" ] ")
@@ -275,13 +272,13 @@ def affiche_info(dico):
                 print(row, end=" ] ")
             for line in dico[row]:
                 if line == 'Note':
-                # print()
-                # print('Note: ')
-                # print(str(dico[row][line]))
-            #else:
-        #         print(str(dico[row][line]).ljust(8), end=" | ")
-        # print()
-        # print()
+                 print()
+                print('Note: ')
+                print(str(dico[row][line]))
+            else:
+                print(str(dico[row][line]).ljust(8), end=" | ")
+        print()
+        print()
 
 
 
@@ -296,10 +293,10 @@ def affiche_infov(dico):
             #print(row, end=" ] ")
                 for line in dico[row]:
                     if line == 'Note':
-                # print('Moyenne G: ',end='')
-                # print(str(dico[row][line]['moyenne_generale']))
+                    # print('Moyenne G: ',end='')
+                    # print(str(dico[row][line]['moyenne_generale']))
 
-                #print(str(dico[row][line]), end=" | ")
+                        print(str(dico[row][line]), end=" | ")
 
 
 
@@ -326,7 +323,7 @@ def affiche_line(line):
         if cell == 'Note':
             # print(str(line[cell]['moyenne_generale']).center(n))
     #     else:
-    #         print(line[cell].center(n + 1), end=" |")
+             print(line[cell].center(n + 1), end=" |")
     # print("_")
 
 

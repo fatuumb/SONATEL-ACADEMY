@@ -1,7 +1,6 @@
 #Importez les fonctions et modules nécessaires.
 import Fonctions as name
 
-
 from csv import DictReader
 
 nameinfichier_csv = dict()
