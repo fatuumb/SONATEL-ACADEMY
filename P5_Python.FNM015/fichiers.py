@@ -6,13 +6,14 @@ from csv import DictReader
 nameinfichier_csv = dict()
 compt = 0
 tab=[]
-with open('Project.csv', 'r') as fichier_csv:
+with open('Project.csv','r') as fichier_csv:
 
     fichier_csv_reader = DictReader(fichier_csv)
     for line in fichier_csv_reader:
         tab.append(line)
         #nameinfichier_csv.setdefault(compt, line)
         #compt +=1
+        
         # for key, value in line.items():
         #     print(key, value)
         #     print("_______________________________________________________________")
