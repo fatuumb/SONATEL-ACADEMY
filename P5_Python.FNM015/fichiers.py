@@ -82,7 +82,11 @@ for i in range (0,len(tab)):
     else:
         lignes_valides.append (d)
 
-
+print('les lignes vaide')
+print(lignes_valides)
+print("\n\n")
+print('les lignes non vaide')
+print(lignes_non_valides)
 
 # print("LES  LIGNES VALIDES SONT ICI ")
 # print (lignes_valides)
