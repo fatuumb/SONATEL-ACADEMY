@@ -3,6 +3,8 @@ import Fonctions as pf
 # from Fonctions import*
 from csv import DictReader
 
+
+
 lignes_valides =[]
 lignes_non_valides =[]
 
@@ -16,28 +18,22 @@ with open('Project.csv', 'r') as fichier_csv:
         tab.append(ligne)
 
 #creation de 2 dictionnaire d qui recupere les  
-#elements valide et erreur qui recupere les elements
-# non valides 
-#l= []
+#elements valide et erreur qui recupere 
+#les elements non valides 
+
 for i in range (0,len(tab)):
     d={}
     erreur={}
     is_valide=True
-    #print(tab[i])
-    # print("\n\n")
-
+   
 #num
-    num=pf.v_numero(tab[i]['Numero'])
-    d["Numero"]=tab[i]['Numero']
+    d["Numero"]=pf.v_numero(tab[i]['Numero'])[1]
+    num=pf.v_numero(tab[i]['Numero'])[0]
     if num==False:
         d["Numero"]=tab[i]['Numero']
         erreur["Numero"]=" Le Numero est invalide"
         is_valide=False
-      #  lignes_non_valides.append (d)
-#     else:
-# print (len(lignes_valides))
-# print (len(lignes_non_valides))
-
+      
 
 #prenom
     pm=pf.v_prenom(tab[i]['Prénom'])
@@ -55,9 +51,6 @@ for i in range (0,len(tab)):
         erreur["Nom"]=" Le Nom est invalide"
         is_valide=False
         
-# print (len(lignes_valides))
-# print (len(lignes_non_valides))
-
 
 
 #Classe
@@ -76,30 +69,58 @@ for i in range (0,len(tab)):
         d["Note"]=tab[i]['Note']
         erreur["Note"]=" Le Note est invalide"
         is_valide=False
-#print(d)
     if(is_valide==False):
-            lignes_non_valides.append(d)
+            lignes_non_valides.append(d)       
     else:
         lignes_valides.append (d)
 
-print('les lignes vaide')
-print(lignes_valides)
-print("\n\n")
-print('les lignes non vaide')
-print(lignes_non_valides)
+#--------affichages des lignes valides----------# 
+def affichage(lignes_valides):
+    print("\t_____________LES LIGNES VALIDES_______________ ") 
+    print('-------------------------------------------------------------------')
+    
+    print('Numero'+(15-len('Numero'))* " "+"| "
+          +"Nom"+(15-len('Nom'))* " "+"| "
+          +"prenom"+(15-len('prenom'))* " "+"| "
+          +"Classe"+(15-len('Classe'))* " "+"| ")
+    print('-------------------------------------------------------------------')
+    
+    
+    for dict in lignes_valides:
+        
+        print(dict['Numero']+(15-len(dict['Numero']))* " "+"|",end=" ")
+        print(dict['Nom']+(15-len(dict['Nom']))* " "+"|",end=" ")
+        print(dict['prenom']+(15-len(dict['prenom']))* " "+"|",end=" ")
+    #   print(dict['Date de naissance']+(15-len(dict['Date de naissance']))* " "+"|",end=" ")
+        print(dict['Classe']+(15-len(dict['Classe']))* " "+"|")
+        #print(dict['Note']+(15-len(dict['Note']))* " "+"|",end=" ")
+    print('-------------------------------------------------------------------')
 
-# print("LES  LIGNES VALIDES SONT ICI ")
-# print (lignes_valides)
+    
+        #print('__________________________________________________________________')
+        
+   # print("\n\n")
+affichage(lignes_valides)
+#--------affichages des non  lignes valides----------#  
 
-# print('\n\n')
-# print("LES LIGNES NON VALIDES SONT ICI")
-# print (lignes_non_valides )
+print("\t_____________LES LIGNES non VALIDES_____________ ") 
+print('-------------------------------------------------------------------')
+
+print('Numero'+(15-len('Numero'))* " "+"| "
+      +"Nom"+(15-len('Nom'))* " "+"| "
+      +"prenom"+(15-len('prenom'))* " "+"| "
+      +"Classe"+(15-len('Classe'))* " "+"| ")
+print('-------------------------------------------------------------------')
 
 
-
-
-
-
+for dict in lignes_non_valides:
+    
+    print(dict['Numero']+(15-len(dict['Numero']))* " "+"|",end=" ")
+    print(dict['Nom']+(15-len(dict['Nom']))* " "+"|",end=" ")
+    print(dict['prenom']+(15-len(dict['prenom']))* " "+"|",end=" ")
+#   print(dict['Date de naissance']+(15-len(dict['Date de naissance']))* " "+"|",end=" ")
+    print(dict['Classe']+(15-len(dict['Classe']))* " "+"|")
+    #print(dict['Note']+(15-len(dict['Note']))* " "+"|",end=" ")
 
 
 
@@ -155,7 +176,6 @@ print(lignes_non_valides)
 #             4. Afficher les 5 premiers
 #             5. Modifier une information invalides
 #             6. Mettre les lignes valides dans la base de donnees
-#             7. Afficher les infos d'une table au choix
 #             Ps: Mettez 0 ou un autre chiffre pour quitter
 #         """)
 #         try:
@@ -163,38 +183,50 @@ print(lignes_non_valides)
 #         except Exception as e:
 #             menu()
 
+
+
 #         if choix == 1:
 #             print("Affichage des lignes valides")
 #             pf.affiche_infov(lignes_valides)
 #             menu()
+            
+            
+            
+            
 #         elif choix == 2:
 #             print("Affichage des lignes invalides")
 #             pf.affiche_info(lignes_non_valides)
-#             print("Voir la liste des erreurs ? oui: pour voir /non: pour aller au menu")
-#             mychoix = input().lower()
-#             if mychoix =='yes':
-#                 pf.affiche_errors(sub_errors)
-#                 menu()
-#             else:
-#                 menu()
+#             # print("Voir la liste des erreurs ? oui: pour voir /non: pour aller au menu")
+#             # mychoix = input().lower()
+#             # if mychoix =='yes':
+#                # pf.affiche_errors(erreur)
+#             menu()
+               
+                
+    
 #         elif choix == 3:
 #             print("Affichage d'une information par numero")
-#             numero = input("Entrer le numero �  afficher: ").upper().strip()
+#             numero = input("Entrer le numero à afficher: ").upper().strip()
 #             pf.affiche_numero(lignes_valides, numero)
 #             menu()
-#         elif choix == 4:
-#             print("Affichage des cinq premiers")
-#             pf.affiche_5premiers(lignes_valides)
-#             menu()
-#         elif choix == 5:
-#             print("Modification des elements invalides")
-#             modif_menu()
+            
+            
+#         # elif choix == 4:
+#         #     print("Affichage des cinq premiers")
+#         #     pf.affiche_5premiers(lignes_valides)
+#         #     menu()
+            
+            
+#         # elif choix == 5:
+#         #     print("Modification des elements invalides")
+#         #     modif_menu()
+            
 #         elif choix == 6:
 #             (lignes_valides)
 #             menu()
-#         elif choix == 7:
-#             menu()
+            
+            
+            
 #     except KeyboardInterrupt:
 #         exit()
-
 # menu()

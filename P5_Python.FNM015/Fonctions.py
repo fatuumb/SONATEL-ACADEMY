@@ -3,13 +3,29 @@ from re import compile
 #from Fonctions import *
 
 # fonction verifiant la validité d'un numero
+# def v_numero(num):
+#     if len(num) != 7 or not num.isupper():
+#         return False
+#     elif num.isalpha() or num.isdecimal():
+#         return False
+#     else:
+#         return True
 def v_numero(num):
-    if len(num) != 7 or not num.isupper():
-        return False
-    elif num.isalpha() or num.isdecimal():
-        return False
+    tag = True
+    if num != '':
+        if len(num) != 7 or not num.isupper():
+            tag= False
+            ch = 'None'
+        elif num.isalpha() or num.isdecimal():
+            ch = 'None'
+            tag= False
+        else:
+            ch = num
+            tag= True
     else:
-        return True
+        ch = 'None'
+        tag= False
+    return tag, ch
 
 # #fonction verifiant la validité d'un prenom
 def v_prenom(prenom):
@@ -237,16 +253,16 @@ def separator(text):
 
 
 # # #fonction pour afficher les erreurs
-# def affiche_errors(mydictionnaire):
-#     if len(mydictionnaire) != 0:
-#         for k in mydictionnaire:
-#             if len(mydictionnaire[k]) != 0:
-#                 # print(str(k).ljust(150 ,"-"))
-#                 for n in mydictionnaire[k]:
-#                         print(n, ':',  mydictionnaire[k][n])
-#                         print()
+def affiche_errors(mydictionnaire):
+    if len(mydictionnaire) != 0:
+        for k in mydictionnaire:
+            if len(mydictionnaire[k]) != 0:
+                # print(str(k).ljust(150 ,"-"))
+                for n in mydictionnaire[k]:
+                        print(n, ':',  mydictionnaire[k][n])
+                        print()
 
-# headers = ['N°','CODE', 'Numero', 'Nom', 'Prenom', 'Date de naissance', 'Classe', 'Note']
+headers = ['N°','CODE', 'Numero', 'Nom', 'Prenom', 'Date de naissance', 'Classe', 'Note']
 
 
 
@@ -267,20 +283,20 @@ def separator(text):
                     
 
 # #fonction affichant les donnees valides
-# def affiche_infov(dico):
-#     # print('CODE', 'Numero', 'Nom', 'Prenom','Date de naissance','Classe','Note', end="\n")
-#     # print('_')
-#         for row in dico:
-#             if row == 1:
-#             #print(str(row) + ' ', end=" ] ")        
-#             #print(row, end=" ] ")
-#                 for line in dico[row]:
-#                     if line == 'Note':
-#                         pass
-#                 # print('Moyenne G: ',end='')
-#                 # print(str(dico[row][line]['moyenne_generale']))
+def affiche_infov(dico):
+    # print('CODE', 'Numero', 'Nom', 'Prenom','Date de naissance','Classe','Note', end="\n")
+    # print('_')
+        for ligne in dico:
+            if ligne == 1:
+            #print(str(row) + ' ', end=" ] ")        
+            #print(row, end=" ] ")
+                for ligne in dico[ligne]:
+                    if ligne == 'Note':
+                        pass
+                # print('Moyenne G: ',end='')
+                # print(str(dico[row][line]['moyenne_generale']))
 
-#                 #print(str(dico[row][line]), end=" | ")
+                #print(str(dico[row][line]), end=" | ")
 
 
 
@@ -415,3 +431,69 @@ def separator(text):
 #         return True
 #     else:
 #         return False
+
+
+def menu():
+    try:
+        print("MENU")
+        print("""
+            1. Afficher les lignes valides
+            2. Afficher les lignes invalides
+            3. Afficher une information par numero
+            4. Afficher les 5 premiers
+            5. Modifier une information invalides
+            6. Mettre les lignes valides dans la base de donnees
+            Ps: Mettez 0 ou un autre chiffre pour quitter
+        """)
+        try:
+            choix = int(input("Faites votre choix: "))
+        except Exception as e:
+            menu()
+
+
+
+        # if choix == 1:
+        #     print("Affichage des lignes valides")
+        #     pf.affiche_infov(lignes_valides)
+        #     menu()
+            
+            
+            
+            
+        # elif choix == 2:
+        #     print("Affichage des lignes invalides")
+        #     #pf.affiche_info(lignes_non_valides)
+        #     # print("Voir la liste des erreurs ? oui: pour voir /non: pour aller au menu")
+        #     # mychoix = input().lower()
+        #     # if mychoix =='yes':
+        #         # pf.affiche_errors(erreur)
+        #     menu()
+               
+                
+    
+        # elif choix == 3:
+        #     print("Affichage d'une information par numero")
+        #     numero = input("Entrer le numero à afficher: ").upper().strip()
+        #     #pf.affiche_numero(lignes_valides, numero)
+        #     menu()
+            
+            
+        # # elif choix == 4:
+        # #     print("Affichage des cinq premiers")
+        # #     pf.affiche_5premiers(lignes_valides)
+        # #     menu()
+            
+            
+        # # elif choix == 5:
+        # #     print("Modification des elements invalides")
+        # #     modif_menu()
+            
+        # elif choix == 6:
+        #     (lignes_valides)
+        #     menu()
+            
+            
+            
+    except KeyboardInterrupt:
+        exit()
+menu()
