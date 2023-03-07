@@ -20,27 +20,38 @@ filename='Project.csv'
 data=Donnee(filename)
 co=data.recup_valeurs()
 
-#pprint(co)
+# pprint(co)
 
 class Etudiant:
-  def __init__(self,CODE,Numero,Nom,Prénom,naissance,Classe,Note):
-    
-     self.CODE       = CODE
-     self.Nom        = Nom
-     self.Prénom     = Prénom
-     self.Numero     = Numero
-     self.Note       = Note
-     self.Classe     = Classe
-     self.naissance  = naissance
+    def __init__(self,info):
+      self.info=info
+      # self.CDE       = CODE
+      # self.Nm        = Nom
+      # self.Prnom     = Prénom
+      # self.Num       = Numero
+      # self.Nte       = Note
+      # self.Clse      = Classe
+      # self.nsance    = naissance
+
+    def numeroValide(self):
+        if len(self.info) == 7:
+            if self.info.isalnum() == True:
+                print(self.info)
+                if self.info.isupper() == True:
+                    if any(c.isdigit()for c in self.info) == True:
+                        return True
 
 
-listeObject=[]
-for i in co:
-   etudiant=Etudiant(i["CODE"],i["Numero"],i["Nom"],i["Prénom"],i["Date de naissance"],i['Classe'],i['Note'])
-   listeObject.append(etudiant)
-for i in (listeObject):
-   print('\n\n')
-   print(vars(i))
+#Etudiant(co[2]["Numero"]).numeroValide()
+print(co[9])
+
+# listeObject=[]
+# for i in co:
+#    etudiant=Etudiant(i["CODE"],i["Numero"],i["Nom"],i["Prénom"],i["Date de naissance"],i['Classe'],i['Note'])
+#    listeObject.append(etudiant)
+# for i in (listeObject):
+#    print('\n\n')
+#    print(vars(i))
 
 # #      #verification des numeros 
 # def numeroValide(self):
