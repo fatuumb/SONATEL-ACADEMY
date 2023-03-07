@@ -42,8 +42,8 @@ class Etudiant:
                         return True
 
 
-#Etudiant(co[2]["Numero"]).numeroValide()
-print(co[9])
+Etudiant(co[2]["Numero"]).numeroValide()
+#print(co[9])
 
 # listeObject=[]
 # for i in co:
