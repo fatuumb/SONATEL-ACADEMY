@@ -52,3 +52,8 @@ for i in range (0,3):
     print(("|"+Mois_français[i])+"|"+(Mois_français[i+3])+"|"+(Mois_français[i+6])+"|"+(Mois_français[i+9])+"|")
 print("|_______________|_______________|_______________|_______________|")
 menue()
+
+
+
+
+

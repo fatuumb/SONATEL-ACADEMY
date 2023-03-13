@@ -75,42 +75,42 @@ for i in range (0,len(tab)):
         lignes_valides.append (d)
 
 #--------affichages des lignes valides----------# 
-# def affichage(lignes_valides):
-#     print("\t_____________LES LIGNES VALIDES_______________ ") 
-#     print('-------------------------------------------------------------------')
+def affichage(lignes_valides):
+    print("\t_____________LES LIGNES VALIDES_______________ ") 
+    print('-------------------------------------------------------------------')
     
-#     print('Numero'+(15-len('Numero'))* " "+"| "
-#           +"Nom"+(15-len('Nom'))* " "+"| "
-#           +"prenom"+(15-len('prenom'))* " "+"| "
-#           +"Classe"+(15-len('Classe'))* " "+"| ")
-#     print('-------------------------------------------------------------------')
+    print('Numero'+(15-len('Numero'))* " "+"| "
+          +"Nom"+(15-len('Nom'))* " "+"| "
+          +"prenom"+(15-len('prenom'))* " "+"| "
+          +"Classe"+(15-len('Classe'))* " "+"| ")
+    print('-------------------------------------------------------------------')
     
     
-#     for dict in lignes_valides:
+    for dict in lignes_valides:
         
-#         print(dict['Numero']+(15-len(dict['Numero']))* " "+"|",end=" ")
-#         print(dict['Nom']+(15-len(dict['Nom']))* " "+"|",end=" ")
-#         print(dict['prenom']+(15-len(dict['prenom']))* " "+"|",end=" ")
-#     #   print(dict['Date de naissance']+(15-len(dict['Date de naissance']))* " "+"|",end=" ")
-#         print(dict['Classe']+(15-len(dict['Classe']))* " "+"|")
-#         #print(dict['Note']+(15-len(dict['Note']))* " "+"|",end=" ")
-#     print('-------------------------------------------------------------------')
+        print(dict['Numero']+(15-len(dict['Numero']))* " "+"|",end=" ")
+        print(dict['Nom']+(15-len(dict['Nom']))* " "+"|",end=" ")
+        print(dict['prenom']+(15-len(dict['prenom']))* " "+"|",end=" ")
+    #   print(dict['Date de naissance']+(15-len(dict['Date de naissance']))* " "+"|",end=" ")
+        print(dict['Classe']+(15-len(dict['Classe']))* " "+"|")
+        #print(dict['Note']+(15-len(dict['Note']))* " "+"|",end=" ")
+    print('-------------------------------------------------------------------')
 
     
-#         #print('__________________________________________________________________')
+        #print('__________________________________________________________________')
         
-#    # print("\n\n")
-# affichage(lignes_valides)
-# #--------affichages des non  lignes valides----------#  
+   # print("\n\n")
+affichage(lignes_valides)
+#--------affichages des non  lignes valides----------#  
 
-# print("\t_____________LES LIGNES non VALIDES_____________ ") 
-# print('-------------------------------------------------------------------')
+print("\t_____________LES LIGNES non VALIDES_____________ ") 
+print('-------------------------------------------------------------------')
 
-# print('Numero'+(15-len('Numero'))* " "+"| "
-#       +"Nom"+(15-len('Nom'))* " "+"| "
-#       +"prenom"+(15-len('prenom'))* " "+"| "
-#       +"Classe"+(15-len('Classe'))* " "+"| ")
-# print('-------------------------------------------------------------------')
+print('Numero'+(15-len('Numero'))* " "+"| "
+      +"Nom"+(15-len('Nom'))* " "+"| "
+      +"prenom"+(15-len('prenom'))* " "+"| "
+      +"Classe"+(15-len('Classe'))* " "+"| ")
+print('-------------------------------------------------------------------')
 
 
 for dict in lignes_non_valides:

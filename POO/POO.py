@@ -45,87 +45,87 @@ class Etudiant:
 Etudiant(co[2]["Numero"]).numeroValide()
 #print(co[9])
 
-# listeObject=[]
-# for i in co:
-#    etudiant=Etudiant(i["CODE"],i["Numero"],i["Nom"],i["Prénom"],i["Date de naissance"],i['Classe'],i['Note'])
-#    listeObject.append(etudiant)
-# for i in (listeObject):
-#    print('\n\n')
-#    print(vars(i))
+listeObject=[]
+for i in co:
+   etudiant=Etudiant(i["CODE"],i["Numero"],i["Nom"],i["Prénom"],i["Date de naissance"],i['Classe'],i['Note'])
+   listeObject.append(etudiant)
+for i in (listeObject):
+   print('\n\n')
+   print(vars(i))
 
-# #      #verification des numeros 
-# def numeroValide(self):
-#         if len(self.Numeros) == 7:
-#             if self.Numeros.isalnum() == True:
-#                 print(self.Numeros)
-#                 if self.Numeros.isupper() == True:
-#                     if any(c.isdigit()for c in self.Numeros) == True:
-#                         return True
+#      #verification des numeros 
+def numeroValide(self):
+        if len(self.Numeros) == 7:
+            if self.Numeros.isalnum() == True:
+                print(self.Numeros)
+                if self.Numeros.isupper() == True:
+                    if any(c.isdigit()for c in self.Numeros) == True:
+                        return True
 
-# Etudiant.numeroValide(Etudiant)
+Etudiant.numeroValide(Etudiant)
 
 
 #pprint(listeObject)
 
-# def __str__(self):
-#         return (f"{self.Nom}-{self.Prénom}")
-#   def affiche_eleves(self):
-#       print(f"""
-#            Nom:{self.Nom} 
-#            Prénom:{self.Prénom}
-#            Numeros:{self.Numeros}  
-#            Note:{self.Note}  
-#            Classe:{self.Classe}
-#            Naissance:{self.Naissance}         
-#            """)
+def __str__(self):
+        return (f"{self.Nom}-{self.Prénom}")
+  def affiche_eleves(self):
+      print(f"""
+           Nom:{self.Nom} 
+           Prénom:{self.Prénom}
+           Numeros:{self.Numeros}  
+           Note:{self.Note}  
+           Classe:{self.Classe}
+           Naissance:{self.Naissance}         
+           """)
 
 
 
-# #      #verification des numeros 
-# def numeroValide(self):
-#         if len(self.Numeros) == 7:
-#             if self.Numeros.isalnum() == True:
-#                 print(self.Numeros)
-#                 if self.Numeros.isupper() == True:
-#                     if any(c.isdigit()for c in self.Numeros) == True:
-#                         return True
+#      #verification des numeros 
+def numeroValide(self):
+        if len(self.Numeros) == 7:
+            if self.Numeros.isalnum() == True:
+                print(self.Numeros)
+                if self.Numeros.isupper() == True:
+                    if any(c.isdigit()for c in self.Numeros) == True:
+                        return True
 
-# Etudiant.numeroValide(Etudiant)
+Etudiant.numeroValide(Etudiant)
 
-#       #prenom
-#   def prenomValide(self):
-#         cnt = 1
-#         if (self.Prénom == ""):
-#             return False
-#         elif self.Prénom[0] >= 'a' and self.Prénom[0] <= 'z' or self.Prénom[0] >= 'A' and self.Prénom[0] <= 'Z':
-#             for i in range(1,len(prenom)):
-#                 if self.Prénom[i] >= 'a' and self.Prénom[i] <= 'z' or self.Prénom[i] >= 'A' and self.Prénom[i] <= 'Z':
-#                     cnt += 1
-#             if cnt >= 3:
-#                 return True
-#             else:
-#                 return False    
-#         else:
-#             return False 
+      #prenom
+  def prenomValide(self):
+        cnt = 1
+        if (self.Prénom == ""):
+            return False
+        elif self.Prénom[0] >= 'a' and self.Prénom[0] <= 'z' or self.Prénom[0] >= 'A' and self.Prénom[0] <= 'Z':
+            for i in range(1,len(prenom)):
+                if self.Prénom[i] >= 'a' and self.Prénom[i] <= 'z' or self.Prénom[i] >= 'A' and self.Prénom[i] <= 'Z':
+                    cnt += 1
+            if cnt >= 3:
+                return True
+            else:
+                return False    
+        else:
+            return False 
         
-#       #nom
-#   def nomValide(self,nom):
-#         nbre = 1
-#         if (nom == ""):
-#             return False
-#         elif nom[0] >= 'a' and nom[0] <= 'z' or nom[0] >= 'A' and nom[0] <= 'Z':
-#             for i in range(1,len(nom)):
-#                 if nom[i] >= 'a' and nom[i] <= 'z' or nom[i] >= 'A' and nom[i] <= 'Z':
-#                     nbre += 1
-#             if nbre >= 2:
-#                 return True 
-#             else:
-#                 return False
+      #nom
+  def nomValide(self,nom):
+        nbre = 1
+        if (nom == ""):
+            return False
+        elif nom[0] >= 'a' and nom[0] <= 'z' or nom[0] >= 'A' and nom[0] <= 'Z':
+            for i in range(1,len(nom)):
+                if nom[i] >= 'a' and nom[i] <= 'z' or nom[i] >= 'A' and nom[i] <= 'Z':
+                    nbre += 1
+            if nbre >= 2:
+                return True 
+            else:
+                return False
             
-#         else:
-#             return False  
+        else:
+            return False  
 
-#       #date
+      #date
 #   def changerFormatDate(self,date):
 #         dateF =""
 #         listeMois =["janvier","février","mars","avril","mai","juin","juillet","août","septembre","octobre","novembre","decembre"]
