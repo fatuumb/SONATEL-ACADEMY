@@ -1,45 +1,67 @@
- <!--  1 : Paragraphe et Titre-->
- <!DOCTYPE html>
- <html>
-   <head>
-     <meta charset="UTF-8">
-     <title>Exemple de page avec XML</title>
-     <link rel="stylesheet" href="TP1.css">
-   </head>
-   <body>
-     <h1 title="Extensible Markup Language">XML</h1>
-     <h2>Titre de niveau 2</h2>
-     <p>Le silence est souvent préférable au bruit inutile. <br>
-        Cela permet de réfléchir, de se concentrer ou tout 
-        simplement de profiter de l'instant présent sans distraction.<br>
-        Cependant, parfois, un peu de bavardage peut être 
-        agréable pour égayer l'ambiance ou nouer des liens sociaux.<br>
-        Tout dépend du contexte et des personnes impliquées.
-     <h2>Exemple</h2>
-     <div class="card flex-column-centre">
-      </div>
-     <hr>
-     <cite>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<style type="text/css">
+	.xmlcanva {
+		min-height: 280px; max-width: 600px; background-color: black;
+    border-radius: 15px 15px 15px 15px;
+    cursor:crosshair;
+	}
+	.text-royalblue {
+		color :  skyblue;
+	}
+	.text-lightblue{
+		color: aqua;
+	}
+	.text-orange{
+		color: orange;
+	}
+	.pad20{
+		padding-left: 30px;
+	}
+	.pad40{
+		padding-left: 60px;
+	}
+	.pad5{
+		padding-left: 5px;
+	}
+</style>
+<body>
+  <h1 title="Extensible Markup Language">XML</h1>
+
+	<p>
+		<h2>Caractéristiques du langage XML</h2>
+Contrairement à d'autres, le XML ne demande pas de connaissances techniques en codage pour être utilisé. Comme il est naturellement structuré, il est facile à lire et à comprendre. Ce langage est également très accessible : pas de besoin d'un logiciel d'édition de code pour l'écrire. Un logiciel de traitement de texte basique comme le bloc-note fait l'affaire. Il est universel, c'est-à-dire qu'il ne rencontre pas de problème de compatibilité avec d'autres technologies. Enfin, il est extensible, puisque il est toujours possible d'ajouter de nouvelles balises au fil des besoins.
+	</p>
+	<center><h3>Exemple</h3>
+	<div class="xmlcanva" style="text-align: left;">
+		<div>
+			<xml class='pad5' style='color: rgb(246, 111, 111);' ><"<span class="text-royalblue">?xml</span> <span class="text-lightblue">version</span> = <span class="text-orange">'1.0'</span> <span class="text-lightblue">encoding</span> = <span class="text-orange">"iso 8859-1"</span>? ><br><br>
+				<span class="pad5"><<span class="text-royalblue">mail</span>><br>
+				<span class="pad20"><</span><span class="text-royalblue pad10">de</span>>orange.sn@utc.sn<<span class="text-royalblue">/de</span>><br>
+				<span class="pad20"><<span class="text-royalblue pad10">a</span>>fatou.sowc@gmail.com<<span class="text-royalblue">/a</span>><br>
+				<span class="pad20"><<span class="text-royalblue pad10">objet</span>>Demande d' information<<span class="text-royalblue">/objet</span>><br>
+				<span class="pad20"><<span class="text-royalblue pad10">date</span>>01-03-2023<<span class="text-royalblue">/date</span>><br>
+				<span class="pad20"><<span class="text-royalblue pad10">corps</span>><br>
+				<span class="pad40"><<span class="text-royalblue">paragraphe</span>>Salut je m'appel fatou<<span class="text-royalblue">/paragraphe</span>><br>
+				<span class="pad40"><<span class="text-royalblue">paragraphe</span>>Peux-tu m'expliquer ce qu'est le language XML?<<span class="text-royalblue">/paragraphe</span>><br>
+				<span class="pad40"><<span class="text-royalblue">paragraphe</span>>Il me faudrait en effet ton avis eclaire sur le sujet.<<span class="text-royalblue">/paragraphe</span>><br>
+				<span class="pad40"><<span class="text-royalblue">paragraphe</span>>J'atends ta reponse a Bientot<<span class="text-royalblue">/paragraphe</span>><br>
+				<span class="pad20"><<span class="text-royalblue">/corps</span>><br>
+				<span class="pad5"><<span class="text-royalblue">/mail</span>><br>
+			</xml>
+		</div>
+	</div>
+	</center>
+	</p>
+		<hr></hr>
+	<cite>
       <u>Citation</u> :"Le savoir est comme un jardin : si on ne l'arrose pas, il ne peut pas pousser." 
       <i>Citation Africaine</i>
      </cite>
-   </body>
- </html>
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>
