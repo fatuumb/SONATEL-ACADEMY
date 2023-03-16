@@ -1,0 +1,12 @@
+	.imgcover{background-image : url('image.jpg') ; background-repeat:no-repeat; background-size: 2000px 900px;}
+	.premierCarac::first-letter{
+		text-transform: uppercase;
+		color: red;
+		font-size: 25px;
+	}
+	.blok0{
+		background-color: red; margin-left: 200px; margin-right: 200px; height: 150px; font-size: 25px; border: solid; 
+	}
+	.blok{
+		color: blue; background-color: goldenrod;margin-left: 100px; margin-right: 150px; height: 50px;
+	}
