@@ -1,7 +1,6 @@
 	.menuprincipale {
-		height: ;
+		/* height: 10px; */
 		background-color: #191970;
-/*		padding-top: 1px;*/
 		width: 1700px;
 	}
 	img{
@@ -58,7 +57,6 @@
 		color: white;
 		height: 900px;
 	}
-<style type="text/css">
 	body {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -182,4 +180,3 @@ input {width: 300px; font-size: 15px; min-height: 20px;}
 		background-color: navy;
 
 	}
-<
