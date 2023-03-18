@@ -1,0 +1,254 @@
+body {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    width: 90%;
+    min-width: 800px;
+    max-width: 1980px;
+}
+
+.imgfont{
+    -webkit-backdrop-filter: blur(15px); 
+    backdrop-filter: blur(15px);
+    background-color: rgb(39, 215, 30);
+}
+
+.fontimage{
+    background-image: url('images/cover1.jpg');
+    background-repeat:no-repeat; 
+    background-position: center ;
+    background-size: cover;
+    min-height: 1000px;
+    width: 100%;
+    margin: 0px;
+    padding: 0%;
+    background-blend-mode: darken;
+    }
+
+p:first-letter {
+  float: left; 
+  font: bold 3em Georgia, "Times New Roman", Times, serif;
+  color: orange;
+  padding: 3px 8px;
+  margin: 5px 5px 0 0;
+  border: 1px solid #900;
+}
+
+.menuprincipale {
+	max-height: 200px;
+	background-color: black;
+	margin-top : -23px;
+	max-width: 1680px;
+	text-align: left;
+	padding-left: 240px;
+}
+img{
+	max-height: 120px;
+	max-width: 120px;
+	border-radius: 20px;
+}
+
+.imgicon{
+	border-image-width: 2px;
+	background-image: url("../images/kala.jpg");
+	background-size:100px 100px;
+	border-radius: 50%;
+}
+.text-light {
+		color: white;
+}
+.text-orange {
+        color: orange;
+}
+
+button:hover {
+    background-color: green;
+    color: black;
+}
+
+#sidebar {
+    background-color: darkorange;
+    color: white;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -200px;
+    width: 200px;
+    transition: transform 0.3s ease-in-out;
+}
+
+#content {
+    margin-left: 200px;
+    padding: 20px;
+    text-align: justify;
+    top: 100px;
+}
+
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+#sidebar li {
+    padding: 10px;
+}
+
+#menu-toggle:checked~#sidebar {
+    transform: translateX(200px);
+}
+
+
+
+
+#menu-toggle {
+    display: none;
+}
+
+label[for="menu-toggle"] {
+    background-color: orange;
+    width: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 30px;
+    padding-left: 20px 170px;
+    position: absolute;
+    top: 1px;
+    left: 200px;
+    z-index: 1;  /*z-index represente la position des elements avec 0 le premier element*/
+}
+
+label[for="menu-toggle"]:hover {
+    background-color: orange;
+    color: white;
+}
+
+button {
+		color : orange;
+		background-color: black;
+		font-size : 18px;
+		padding-top: 2px;
+		min-width: 45px;
+		border-radius: 1px 0 3px 4px;
+}
+
+.btn1{
+	min-width: 30px;
+	max-height: 70px;
+	background-color: navy;
+
+}
+
+.row {
+     display: flex;
+   }
+
+.col {
+      flex: 1; 
+ }
+	
+
+
+input[type="checkbox"] {
+	display:none;
+}
+input[type="checkbox"]:checked ~ .modal,
+input[type="checkbox"]:checked ~ .modal-background {
+	display: block;
+}
+input {width: 300px; font-size: 15px; min-height: 20px;}
+
+.modal-background {
+	width: 150%;
+    height: 150%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: 9998;
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: none;	
+    width: 400px;
+    height: 300px;
+    background-color: #fff;
+    box-sizing: border-box;
+    z-index: 9999;
+}
+.modal > p {
+	padding: 15px;
+    margin: 0;
+}
+.modal-header {
+	background-color: orange;
+	color : black;
+    border-bottom: 1px solid #dddddd;
+    box-sizing: border-box;
+    height: 50px;
+}
+.modal-header h3 {
+	margin: 0;
+    box-sizing: border-box;
+    padding-left: 15px;
+    line-height: 50px;
+    color: white;
+    font-size: 16px;
+    display: inline-block;
+}
+.modal-header label {
+	box-sizing: border-box;
+    border-left: 1px solid #dddddd;
+    float: right;
+    line-height: 50px;
+    padding: 0 15px 0 15px;
+    cursor: pointer;
+}
+.modal-header label:hover img {
+	opacity: 0.6;
+}
+.example-label {
+	box-sizing: border-box;
+    display: inline-block;
+    padding: 10px;
+    background-color: orange;
+    color: #f9f9f9;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.example-label:hover {
+	background-color: lightblue;
+}
+.btnsubmit{
+	background-color: black;
+	border: 10px;
+	color: white;
+	font-size: 15px;
+}
+
+.sidebar {
+	height: 300px;
+	background-color: #191970;
+	padding-top: 1px;
+}
+
+
+
+
+.posButton{
+	padding-top: 20px;
+	align-content: center;
+}
+
+
+.btn1{
+	min-width: 30px;
+	max-height: 70px;
+	background-color: black;
+    color: gold;
+
+}
