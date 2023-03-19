@@ -52,6 +52,8 @@ img{
 }
 .text-light {
 		color: white;
+        font-weight: bold;
+
 }
 .text-orange {
         color: orange;
