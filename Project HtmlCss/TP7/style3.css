@@ -52,7 +52,7 @@ section{
    left: 35%;
    background-color: #ffffff;
     border: 1px solid black;
-    cursor:default;
+    cursor:move;
    
 }
 .modal h2{
