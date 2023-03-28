@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px;
+}
+.left, .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #302c2c;
+    border: 2px solid brown;
+    width: 200px;
+    height: 300px;
+}
+.left p, .right p {
+    margin: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid rgb(31, 8, 166);
+    cursor:grabbing;
+}
+.left p:hover, .right p:hover {
+    background-color: brown;
+}
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 50px;
+}
+button {
+    margin: 10px;
+    padding: 10px;
+    background-color: burlywood;
+    border: 10px solid  rgb(91, 73, 73);
+    cursor: pointer;
+}

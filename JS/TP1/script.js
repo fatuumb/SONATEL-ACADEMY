@@ -1,40 +1,58 @@
-    var compteur = 0; // variable pour garder une trace du nombre de composants créés
+    //ajout un element
+        const bnt=document.querySelector('.bnt');
+        bnt.addEventListener('click',ajouterComposant);
 
-    // fonction pour ajouter un nouveau composant
-    function ajouterComposant() {
-        compteur++; // incrémenter le compteur
+        function ajouterComposant(){
+            let note = document.createElement('div')
+            note.className = 'note'
 
-        // créer un nouveau div pour le composant
-        var divComposant = document.createElement("div");
-        divComposant.id = "composant_" + compteur;
-        divComposant.className = "composant";
+            let header = document.createElement('div')
+            header.className = 'header'
 
-        // créer un textarea pour le composant
-        var textareaComposant = document.createElement("textarea");
-        textareaComposant.id = "textarea_" + compteur;
-        textareaComposant.className = "textarea";
-        divComposant.appendChild(textareaComposant);
+            const iconeCorbeille = document.createElement("i");
+            iconeCorbeille.className = "fa fa-trash";
+            
+            const iconeEdit = document.createElement("i");
+            iconeEdit.className = "fa fa-edit";
+            iconeEdit.onclick = function() {
+                if (textareaComposant.disabled) {
+                    textareaComposant.disabled = false;
+                } else {
+                    textareaComposant.disabled = true;
 
-        // créer une icône "edit" pour le composant
-        var iconeEdit = document.createElement("i");
-        iconeEdit.className = "fa fa-edit";
-        iconeEdit.onclick = function() {
-            if (textareaComposant.disabled) {
-                textareaComposant.disabled = false;
-            } else {
-                textareaComposant.disabled = true;
-            }
-        };
-        divComposant.appendChild(iconeEdit);
+                }
+            };
 
-        // créer une icône "corbeille" pour le composant
-        var iconeCorbeille = document.createElement("i");
-        iconeCorbeille.className = "fa fa-trash";
-        iconeCorbeille.onclick = function() {
-            divComposant.remove();
-        };
-        divComposant.appendChild(iconeCorbeille);
+            iconeCorbeille.className = "fa fa-trash";
+            iconeCorbeille.onclick = function() {
+             note.remove();};
+            header.append(iconeEdit,iconeCorbeille)
 
-        // ajouter le nouveau composant à la page
-        document.getElementById("liste_composants").appendChild(divComposant);
-    }
+            let body = document.createElement('div')
+            body.className = 'body'
+
+            const textareaComposant = document.createElement("textarea");
+            body.appendChild(textareaComposant)
+            note.append(header,body)
+            console.log(note);
+
+            let composant = document.getElementById('liste_composants')
+composant.appendChild(note)
+}
+
+
+
+
+
+    
+
+        
+        
+
+
+  
+
+
+    
+
+    
