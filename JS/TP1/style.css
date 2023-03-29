@@ -13,7 +13,8 @@ body{
 .bnt{
     background-color:rgb(14, 116, 14);
     color: aliceblue;
-    float: right;  
+    float: right; 
+    box-shadow :10px 10px(0,0,0,0); 
 
 }
 
