@@ -1,0 +1,47 @@
+body {
+    background-color: gainsboro;
+}
+
+.bnt{
+    display: flex;
+    align-items:right ; 
+    
+}
+
+.bnt button{
+    padding: 20px;
+    border: 2px solid gainsboro;
+    width: 200px;
+    height: 4px;
+    border-radius: 15px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-left: -7px;
+    padding-right: -2px;
+    margin: 1px;
+    cursor:grabbing;
+    font-weight: bold;
+}
+
+.bleu{
+    background-color: rgb(135, 135, 217);
+    color: white;
+}
+
+.rouge{
+    background-color:rgb(148, 27, 27);
+    color: white;
+
+}
+
+.vert{
+    background-color:green;
+    color: rgb(225, 218, 218);
+
+}
+
+.jaune{
+    background-color: orange;
+    color: white;
+
+}
