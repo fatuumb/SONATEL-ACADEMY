@@ -4,11 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Generateur de mot de passe</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
+    <div>
+        <div class="container"> 
+            <input class="password"></input>
+            <div class="caracterisrique" >
+                <div>
+                    <label for="taille">Longueur password</label>
+                    <input type="number" id="taille" min="15"  max="20"
+                    value="15">
+                </div>
+                
+                <div>
+                    <label for="maj">Contient des lettres Majuscules</label>
+                    <input type="checkbox" id="maj" checked>
+                </div>
+
+                <div>
+                    <label for="min">Contient des lettres Miniscules</label>
+                    <input type="checkbox" id="min" checked>
+                </div>
+
+                <div>
+                    <label for="numero">Contient des Nombres </label>
+                    <input type="checkbox" id="nmbre">
+                </div>
+
+                <div>
+                    <label for="spe">Contients des Caracteres speciaux</label>
+                    <input type="checkbox" id="spe">
+                </div>
+            </div>
+            <button class="bnt">Generateur de mot de passe</button>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

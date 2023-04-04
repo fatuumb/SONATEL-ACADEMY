@@ -21,9 +21,9 @@
     border: 1px solid rgb(31, 8, 166);
     cursor:grabbing;
 }
-.left p:hover, .right p:hover {
+/* .left p:hover, .right p:hover {
     background-color: brown;
-}
+} */
 .buttons {
     display: flex;
     flex-direction: column;
@@ -36,4 +36,7 @@ button {
     background-color: burlywood;
     border: 10px solid  rgb(91, 73, 73);
     cursor: pointer;
+}
+ .active{
+    background: red;    
 }

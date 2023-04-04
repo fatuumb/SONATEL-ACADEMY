@@ -1,0 +1,52 @@
+.container{
+    width: 350px;
+    height: 320px;  
+    border:9px solid rgb(71, 12, 129);
+    background-color: rgb(48, 11, 92);
+}
+
+.password{
+    width: 310px;
+    height: 20px; 
+    color: white;
+    margin: 10px;
+    padding: 10px;
+    margin-right: 20px;
+    background-color: rgba(98, 0, 255, 0.269);
+    /* background-color:rgb(71, 12, 129); */
+}
+
+.caracterisrique{
+    color: white;
+    margin: 10px;
+}
+
+.caracterisrique input{
+    width: 30px;
+    float: right;
+    margin: 9px;
+}
+
+.caracterisrique label{
+    float: left;
+    margin: 9px;;
+}
+
+
+h2{
+    text-align: center;
+    color: white;
+}
+
+.bnt{
+    width: 300px;
+    height: 40px; 
+    color: white;
+    margin: 10px;
+    margin-left: 30px;
+    padding: 10px;
+    margin-right: 20px;
+    background-color:rgb(28, 46, 209);
+    font-size:large;    
+
+}
