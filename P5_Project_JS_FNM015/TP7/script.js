@@ -5,6 +5,7 @@
     let suivant=document.getElementById("next")
     const pagination =document.getElementById("current")
     let page=1
+    // console.log(liste_films)
 
 
     function fetchAPI (){
@@ -26,19 +27,23 @@
 
         const movieDescription = document.createElement("p");
 
+        const votes = document.createElement("p");
+
+
+
         movieImage.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
         movieName.textContent = movie.title;
         movieDescription.textContent = movie.overview;
+        votes.textContent=movie.vote_average
+
   
         movieElement.appendChild(movieImage);
         movieElement.appendChild(movieName);
         movieElement.appendChild(movieDescription);
-  
+        movieElement.appendChild(votes)
         moviesList.appendChild(movieElement);
 
         pagination.innerText=page
-        
-
       }
     })}
     fetchAPI ()
