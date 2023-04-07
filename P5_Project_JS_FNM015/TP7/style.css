@@ -1,0 +1,101 @@
+body{
+    background-color: rgba(13, 13, 218, 0.883);
+    font-family: 'Poppins', sans-serif;
+    margin: 0px;
+}
+
+header{
+    padding:1rem;
+    display:flex;
+    justify-content: flex-end;
+    background-color: rgb(37, 37, 120);
+}
+
+.Recherche{
+    background-color: transparent;
+    border: 2px solid blue;
+    padding:0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    color:#fff;
+    font-family: inherit;
+}
+
+.Recherche:focus{
+    outline:0;
+    background-color: blue;
+}
+
+.Recherche::placeholder{
+    color: #7378c5;
+}
+
+
+.tag{
+    color:white;
+    padding:10px 20px;
+    background-color: orange;
+    border-radius: 50px;
+    margin:5px;
+    display:inline-block;
+    cursor: pointer;
+}
+
+
+.pagination{
+    display:flex;
+    margin:10px 30px;
+    align-items: center;
+    justify-content: center;
+    color:white;
+}
+
+.page{
+    padding:20px;
+    cursor:pointer;
+}
+
+
+
+.current{
+    padding: 10px 20px;
+    border-radius: 50%;
+    border: 5px solid orange;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+.liste_films{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -20%;
+    margin-left: 0%;
+}
+  
+.movie  {
+    width: 20%;
+    margin: 10px;
+    height: 100%;
+  
+}
+
+.movie img{
+    width: 90%;
+    border: 2px solid rgb(9, 255, 0);
+    border-radius: 10px;
+
+}
+
+
+  
+  
+  
+  
+ 
+
+
+
+  
+
+
