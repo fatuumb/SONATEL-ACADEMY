@@ -31,7 +31,7 @@ header{
 }
 
 
-.tag{
+/* .tag{
     color:white;
     padding:10px 20px;
     background-color: orange;
@@ -39,7 +39,7 @@ header{
     margin:5px;
     display:inline-block;
     cursor: pointer;
-}
+} */
 
 
 .pagination{
@@ -54,8 +54,6 @@ header{
     padding:20px;
     cursor:pointer;
 }
-
-
 
 .current{
     padding: 10px 20px;
