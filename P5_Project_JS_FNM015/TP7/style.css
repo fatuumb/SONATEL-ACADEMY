@@ -23,23 +23,12 @@ header{
 
 .Recherche:focus{
     outline:0;
-    background-color: blue;
+    background-color: rgb(37, 37, 120);
 }
 
 .Recherche::placeholder{
     color: #7378c5;
 }
-
-
-/* .tag{
-    color:white;
-    padding:10px 20px;
-    background-color: orange;
-    border-radius: 50px;
-    margin:5px;
-    display:inline-block;
-    cursor: pointer;
-} */
 
 
 .pagination{
@@ -78,15 +67,23 @@ header{
 
 
 
-    width: 300px;
+    /* width: 300px; */
+width: 20%;
+/* margin: 10px; */
+height: 100%;
+
 margin: 1rem;
 border-radius: 3px;
-box-shadow: 0.2px 4px 5px rgb(0 0 0 / 10%);
-background-color: var(--secondary-color);
+box-shadow: 0.2px 4px 5px rgba(196, 22, 22, 0.1);
+background-color: rgb(38, 26, 90);
 position: relative;
 overflow: hidden;
+
+
   
 }
+
+
 
 .movie img{
     width: 90%;
