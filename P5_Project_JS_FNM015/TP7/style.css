@@ -1,5 +1,5 @@
 body{
-    background-color: rgba(13, 13, 218, 0.883);
+    background-color: #373b69;
     font-family: 'Poppins', sans-serif;
     margin: 0px;
 }
@@ -8,7 +8,7 @@ header{
     padding:1rem;
     display:flex;
     justify-content: flex-end;
-    background-color: rgb(37, 37, 120);
+    background-color:#22254b
 }
 
 .Recherche{
@@ -61,23 +61,14 @@ header{
 }
   
 .movie  {
-    /* width: 20%;
-    margin: 10px;
-    height: 100%; */
-
-
-
-    /* width: 300px; */
-width: 20%;
-/* margin: 10px; */
-height: 100%;
-
-margin: 1rem;
-border-radius: 3px;
-box-shadow: 0.2px 4px 5px rgba(196, 22, 22, 0.1);
-background-color: rgb(38, 26, 90);
-position: relative;
-overflow: hidden;
+    width: 20%;
+    height: 90%;
+    margin: 1rem;
+    border-radius: 3px;
+    box-shadow: 0.2px 4px 5px rgba(196, 22, 22, 0.1);
+    /* background-color: rgb(8, 2, 35); */
+    position: relative;
+    overflow: hidden;
 
 
   

@@ -8,6 +8,18 @@
     // console.log(liste_films)
 
 
+// changement de couleur au niveau du vote
+
+  //   function getColor(votes) {
+  //     if(votes>= 8){
+  //         return 'green'
+  //     }else if(votes >= 5){
+  //         return "orange"
+  //     }else{
+  //         return 'red'
+  //     }
+  // }
+
     function fetchAPI (){
       moviesList.innerHTML = ''
     fetch(API+page)
@@ -29,8 +41,7 @@
 
         const votes = document.createElement("p");
 
-
-
+     
         movieImage.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
         movieName.textContent = movie.title;
         movieDescription.textContent = movie.overview;
@@ -48,6 +59,8 @@
     })}
     fetchAPI ()
 
+
+//fonction pour changer de pages 
            suivant.addEventListener("click",function(){
             page++
             fetchAPI ()
