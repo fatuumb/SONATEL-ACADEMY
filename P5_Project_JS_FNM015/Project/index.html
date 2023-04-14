@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport">
+  <script src="https://kit.fontawesome.com/def2cfb1b2.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>Planning Des Cours</title>
+</head>
+<body>
+  <main  class="Container">
+    <div class="lesdeux">
+      <div class="gauche">
+        <div class="recherche">
+          <input type="text" placeholder="Rechercher...">
+        </div>
+        <div class="lesbox"> 
+          <div class="div1">
+            <div class="Enseignants" id="Enseignants" onclick="chargementdonnees('Enseignant')">
+              <i class="fa-sharp fa-solid fa-person-chalkboard"></i>
+              <p>Enseignants</p>
+            </div>
+            <div class="Salles" id="Salles" onclick="chargementdonnees('salle')">
+              <i class="fa-solid fa-house"></i>
+              <p>Salles</p>
+            </div>
+          </div>
+            <div class="div2">
+              <div  class="Classes"  id="Classes"  onclick="chargementdonnees('classe')">
+                <i class="fa-solid fa-building-columns"></i>
+                  <p>Classes</p>
+              </div>
+              <div class="Modules"  id="Modules" onclick="chargementdonnees('module')">
+                <i class="fa-solid fa-trash-can"></i>
+                <p>Modules</p>
+              </div>
+          </div>
+        </div>
+        <select class="form-select" aria-label="Default select example">
+          <option selected></option>
+        </select>
+    </div>
+    <div  class="droite">
+      <div class="head">
+        <h1>Planning: <span class="recup"></span> </h1>
+
+        <!-- <label class="switch">
+          <input type="checkbox" checked>
+          <span class="slider round"></span>
+        </label> -->
+      </div>
+        <div class="contenueHeure" >
+          <p>8h</p>
+          <p>9h</p>
+          <p>10h</p>
+          <p>11h</p>
+          <p>12h</p>
+          <p>13h</p>
+          <p>14h</p>
+          <p>15h</p>
+          <p>16h</p>
+          <p>17h</p>
+        </div>
+      <div class="canlendrier">
+        <div class="days">
+          <div class="contenueJours">
+            <div  class="l"> 
+              <div class="lundi">
+                <p>Lundi</p>
+                <i class="fa-solid fa-plus fa-2xl" style="color: #1f5125;"></i>
+              </div>
+              <div class="box"></div>
+            </div>
+
+              <div class="m">
+                <div class="mardi">
+                  <p>Mardi</p>
+                </div>
+                <div class="box"></div>
+              </div>
+                <div class="mer">
+                  <div class="mercredi">
+                    <p>Mercredi</p>
+                </div>
+                <div class="box"></div>
+                </div>
+  
+                <div class="j">
+                  <div class="jeudi">
+                    <p>Jeudi</p>
+                  </div>
+                  <div class="box"></div>
+                </div>
+                <div class="v">
+                  <div class="vendredi">
+                    <p>Vendredi</p>
+                  </div>
+                  <div class="box"></div>
+                </div>
+                <div class="s">
+                  <div class="samedi">
+                    <p>Samedi</p>
+                  </div>
+                  <div class="box"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
+
+

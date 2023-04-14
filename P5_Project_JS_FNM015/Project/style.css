@@ -1,0 +1,359 @@
+html,
+body{
+  background-color: gray;
+}
+
+.Container{
+  border: 5px solid gray;
+  border-radius: 15px;
+  padding: 5px;
+  color: white;
+  background-color: rgb(79, 79, 79);
+  width: 90%;
+  height: 60%;
+  /* position: fixed; */
+  /* margin: -5%; */
+  margin-left: 5%;
+  margin-right:50px ;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  box-shadow: 2px 2px 5px black;
+    
+}
+
+.lesdeux{
+  /* width: 100%; */
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  /* background: color #9a9a9a; */
+  margin: 0px;
+  padding: 0px;
+ 
+}
+
+.gauche{
+  padding: 35px;
+  border-radius: 15px 0px 0px 15px;
+  width: 35%;
+  height: 100%;
+  font-size: x-large; 
+  margin-right: -2%;
+ 
+}
+
+.droite{
+  width: 90%;
+  padding: 35px;
+ 
+}
+.recherche input {
+  background-color:rgb(103, 102, 102);
+  border-radius: 4px;
+  margin: 4%;
+  width: 90%;
+  height: 100%;
+  padding: 2%;
+  border-radius: 10px;
+}
+
+/* .recherche:hover {
+  background-color: blue;
+} */
+
+/* .lesbox{
+  
+  width: 100%;
+    height: 100%;
+
+} */
+
+.div1{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.div2{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.Enseignants{
+  border: 2px solid gray;
+  padding: 35px;
+  border-radius: 15px  15px 15px 15px;
+  background-color: gray;
+  width: 50%;
+  height: 100%;
+  font-size: x-large;
+  margin: 10px;
+  cursor: pointer;
+}
+.Enseignants i{
+  border: 2px solid gray;
+  padding: 8px;
+  border-radius: 35px;
+  background-color: blue;
+
+}
+
+.Enseignants:hover{
+  background-color: blue;
+}
+
+.Salles{
+  border: 2px solid gray;
+  padding: 20px;
+  border-radius: 15px  15px 15px 15px;
+  background-color: gray;
+  width: 60%;
+  font-size: x-large;
+  margin: 10px;
+  cursor: pointer;
+
+}
+.Salles i{
+  border: 2px solid gray;
+  padding: 8px;
+  border-radius: 35px;
+  background-color: green;
+}
+
+.Salles:hover{
+  background-color: green;
+}
+.Classes{
+  border: 2px solid gray;
+  padding: 25px;
+  border-radius: 15px  15px 15px 15px;
+  background-color: gray;
+  width: 50%;
+  height: 100%;
+  font-size: x-large;
+  margin: 10px;
+  cursor: pointer;
+
+}
+
+.Classes i{
+  border: 2px solid gray;
+  padding: 8px;
+  border-radius: 35px;
+  background-color: orange;
+
+}
+.Classes:hover{
+  background-color: orange;
+}
+
+.Modules{
+  border: 2px solid gray;
+  padding: 26px;
+  border-radius: 15px  15px 15px 15px;
+  background-color: gray;
+  width: 60%;
+  height: 10%;
+  font-size: x-large;
+  margin: 9px;
+  cursor: pointer;
+  font-size: x-large;
+
+}
+.Modules i{
+  border: 2px solid gray;
+  padding: 8px;
+  border-radius: 35px;
+  background-color: red;
+    
+}
+
+.Modules:hover{
+  background-color: red;
+}
+
+.form-select{
+  width: 95%;
+  height: 100%;
+  padding: 2%;
+  border-radius: 10px;
+  margin: 3%;
+}
+
+.head{
+  border: 2px solid gray;
+  padding: 5px;
+  color: white;
+  background-color: black;
+  margin-top: -40px;
+  margin-right:-40px;
+
+}
+
+.head h1{
+  font-size:70px;
+  margin: 1%;
+}
+
+.recup{
+ font-size: 40px;
+}
+.contenueHeure {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  flex-direction: row;
+  width: 100%;
+  background-color:  #9a9a9a;
+  
+} 
+.contenueHeure p{
+  margin-left: 20px;
+
+}
+
+.days {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: rgb(7, 12, 16);
+  margin-bottom:-40px;
+  margin-right: -10px;
+ 
+}
+.contenueJours {
+  display: inline-block;
+  width: 100%;
+  background-color:  rgb(79, 79, 79)
+  
+}
+
+  .lundi{
+    border: 2px solid gray;
+    padding: 35px;
+    border-radius: 15px  0px 0px 15px;
+    background-color: black;
+    width: 9%;
+    height: 100%;
+    font-size: x-large;
+  }
+
+  .lundi i{
+    position: absolute;
+    right: 62%;
+    top: 26%;
+    width: -6%;
+    height: 30px;
+  }
+  .mardi{
+    border: 2px solid gray;
+    padding: 35px;
+    border-radius: 15px  0px 0px 15px;
+    background-color: black;
+    width: 9%;
+    height: 100%;
+    font-size: x-large;
+  }
+
+  .mercredi{
+    border: 2px solid gray;
+    padding: 35px;
+    border-radius: 15px  0px 0px 15px;
+    background-color: black;
+    width: 9%;
+    height: 100%;
+    font-size: x-large;
+  }
+
+  .jeudi{
+    border: 2px solid gray;
+    padding: 35px;
+    border-radius: 15px  0px 0px 15px;
+    background-color: black;
+    width: 9%;
+    height: 100%;
+    font-size: x-large;
+   
+  }
+
+  .vendredi{
+    border: 2px solid gray;
+    padding: 35px;
+    border-radius: 15px  0px 0px 15px;
+    background-color: black;
+    width: 9%;
+    height: 100%;
+    font-size: x-large;
+
+  }
+
+  .samedi{
+    border: 2px solid gray;
+    padding: 35px;
+    border-radius: 15px  0px 0px 15px;
+    background-color: black;
+    width: 9%;
+    height: 100%;
+    font-size: x-large;
+    
+  }
+
+.l{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+
+  /* .l button{
+    color: green;
+    font-size: xx-large;
+    background-color: black;
+  
+  } */
+
+.box{
+  background-color: #6d6868;
+  width:91%;
+  border: 2px solid black;
+  padding: 35px;
+  border-radius: 0px  15px 15px 0px;
+}
+
+.m{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  }
+
+  .mer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+.j{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.v{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.s{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+
+ 
+
+
+
+  
