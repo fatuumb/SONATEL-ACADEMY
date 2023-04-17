@@ -204,13 +204,16 @@ body{
   flex-direction: row;
   color: white;
   flex-direction: row;
-  width: 100%;
-  background-color:  #9a9a9a;
-  
+  width: 90%;
+  /* background-color:  #9a9a9a; */
+  float: right;
+  margin-right: -40px;
+  margin-left: 0%;
+
 } 
 .contenueHeure p{
   margin-left: 20px;
-
+  margin: 3%;
 }
 
 .days {
@@ -240,11 +243,11 @@ body{
   }
 
   .lundi i{
-    position: absolute;
-    right: 62%;
-    top: 26%;
-    width: -6%;
-    height: 30px;
+    float: right;
+    top: 10%;
+    width: 100%;
+    height: 100%;
+    color: green;
   }
   .mardi{
     border: 2px solid gray;
@@ -352,7 +355,12 @@ body{
 }
 
 
- 
+.newDiv{
+  background-color: rgb(0, 4, 255);
+  height: auto;
+  width: 10%;
+  position: absolute;
+ }
 
 
 

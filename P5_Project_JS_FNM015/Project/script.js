@@ -22,7 +22,9 @@ const lesElements={
         {nom: "Python",cle:2},
         {nom: "Langage C",cle:3},
         {nom: "javaScript",cle:4},
-        {nom: "HTML",cle:5}
+        {nom: "HTML",cle:5},
+        {nom: "sql",cle:5}
+
         ],  
     salle:[
         {nom: "salles",capacite:null},
@@ -58,14 +60,60 @@ const lesElements={
             const selectionner =document.querySelector(".form-select")
             selectionner.addEventListener('change',function(){
                 const recuperer=this.options[this.selectedIndex]
-                console.log(recuperer);
                 const span =document.querySelector(".recup")
                 span.textContent=recuperer.textContent
-                console.log(recuperer);
+                if (recuperer.textContent=="Aly") {
+                    remplisage(obj1)
+                }
+
             })
         }
+const prof = document.querySelector("#Enseignants")
+prof.addEventListener('click',function(){
+    chargementdonnees("Enseignant")
+    recuplabel()
+})
+        const obj1 = { name: "Aly",jour: 'lundi',salles:'A1',modules:'langage c',heure:'08h-10H',classe:'IAGE'};
+        const obj2 = { name: "Mbaye", jour: 'mardi',salles:'B1',modules:'python',heure:'10H-11H',classe:'GDA' };
+        const obj3 = { name: "diallo", jour: 'mercredi',salles:'B1',modules:'javaScript',heure:'12H-13H',classe:'IAGE' };
+        const obj4 = { name: "Sow", jour: 'lundi',salles:'C3',modules:'html',heure:'14h-15h',classe:'RESEAU' };
+        const obj5 = { name: "Diop", jour: 'lundi',salles:'D4',modules:'sql',heure:'16-17H',classe:'RI'};
+        objectsList = [obj1, obj2, obj3, obj4,obj5];
 
-        
+        objectsList.forEach((obj) => {
+        //    remplisage(`Name: ${obj.name}, jour: ${obj.jour},salles: ${obj.salles},modules: ${obj.modules},heure: ${obj.heure}`);
+          remplisage(obj)
+    });
+          
+          function remplisage(obj){
+            const nouveauDiv =document.createElement ('div')
+            const p1 =document.createElement('p')
+            const p2 =document.createElement('p')
+            const p3 =document.createElement('p')
+
+            nouveauDiv.classList.add("newDiv")
+
+            p1.textContent=obj.classe
+            p2.textContent=obj.modules
+            p3.textContent=obj.salles
+
+            nouveauDiv.appendChild(p1);
+            nouveauDiv.appendChild(p2);
+            nouveauDiv.appendChild(p3);
+
+
+            let jours = document.querySelector('#monday')
+            console.log(jours)
+
+            // if (obj.jour=='lundi') {
+            //     jours = document.querySelector('#monday')
+            // }
+            // if (obj.jour=='mardi') {
+            //     jours=document.querySelector('#thuesday')
+            // }
+            console.log(jours)
+            jours.appendChild (nouveauDiv)
+          }
 
 
 
