@@ -8,7 +8,7 @@
   <title>Planning Des Cours</title>
 </head>
 <body>
-  <main  class="Container">
+  <main class="Container">
     <div class="lesdeux">
       <div class="gauche">
         <div class="recherche">
@@ -16,25 +16,24 @@
         </div>
         <div class="lesbox"> 
           <div class="div1">
-            <!-- <div class="Enseignants" id="Enseignants" onclick="chargementdonnees('Enseignant')"> -->
-              <div class="Enseignants" id="Enseignants">
-
-              <i class="fa-sharp fa-solid fa-person-chalkboard"></i>
-              <p>Enseignants</p>
+            <div class="Enseignants" id="Enseignants" onclick="chargementdonnees('Enseignant')">
+              <i class="fa-sharp fa-solid fa-person-chalkboard" ></i>
+              <p>Enseignants <i class="fa-sharp fa-solid fa-plus" style="color: #22511f;" id="icon"></i></p>
+              
             </div>
             <div class="Salles" id="Salles" onclick="chargementdonnees('salle')">
               <i class="fa-solid fa-house"></i>
-              <p>Salles</p>
+              <p>Salles <i class="fa-sharp fa-solid fa-plus" style="color: #22511f;" id="icon"></i></p>
             </div>
           </div>
             <div class="div2">
               <div  class="Classes"  id="Classes"  onclick="chargementdonnees('classe')">
                 <i class="fa-solid fa-building-columns"></i>
-                  <p>Classes</p>
+                  <p>Classes <i class="fa-sharp fa-solid fa-plus" style="color: #22511f;" id="icon"></i></p>
               </div>
               <div class="Modules"  id="Modules" onclick="chargementdonnees('module')">
                 <i class="fa-solid fa-trash-can"></i>
-                <p>Modules</p>
+                <p>Modules  <i class="fa-sharp fa-solid fa-plus" style="color: #22511f;" id="icon"></i></p>
               </div>
           </div>
         </div>
@@ -44,14 +43,8 @@
     </div>
     <div  class="droite">
       <div class="head">
-        <h1>Planning: <span class="recup"></span> </h1>
-
-        <!-- <label class="switch">
-          <input type="checkbox" checked>
-          <span class="slider round"></span>
-        </label> -->
-      </div>
-        <div class="contenueHeure" >
+        <h1>Planning: <span class="recup"></span></h1>
+            <div class="contenueHeure" >
           <p>8h</p>
           <p>9h</p>
           <p>10h</p>
@@ -64,53 +57,109 @@
           <p>17h</p>
         </div>
         <div class="days">
-          <div class="contenueJours">
-            <div  class="l"> 
-              <div class="lundi">
-                <p>Lundi</p>
-                <i class="plus" >+</i>
+          <div  class="l"> 
+            <div class="lundi" >
+              <p>Lundi <i class="fa-sharp fa-solid fa-plus" style="color: #22511f;" id="icons"></i></p>
+            <div class="formulaire">
+              <form>
+                <h5>Ajouter un Cours</h5>
+                <div class="le_tout"> 
+                <div class="Prof">
+                  <label for="recipient-name" class="form-label">Enseignant</label>
+                   <select class=" form-selecte ajout" id="ajout_Enseignant">
+                        <option selected>choisir un Enseignant</option>
+                        <option value="">Aly</option>
+                        <option value="">Mbaye</option>
+                        <option value="">Diallo</option>
+                        <option value="">Djiby</option>
+                    </select>
+                </div>
+                <div class="Module">
+                  <label for="Module" class="Module">Module</label>
+                  <select class=" form-selecte  ajout" id="ajout_module">
+                        <option selected>choisir un module</option>
+                        <option value="">langage c</option>
+                        <option value="">python</option>
+                        <option value="">javaScript</option>
+                        <option value="">html</option>
+                  </select>
+                </div>
+                <div class="Salle">
+                  <label for="Salle" class="Salle">Salle</label>
+                  <select class=" form-selecte ajout" id="ajout_salle">
+                       <option selected>choisir une Salle</option>
+                        <option value="">A1</option>
+                        <option value="">B2</option>
+                        <option value="">C3</option>
+                        <option value="">D4</option>
+                  </select>
+                </div>
+                <div class="heure">
+                  <div>
+                    <label for="validation" class="form-label">Heure Debut</label>
+                    <input type="number" class="form-control" id="heured" required>
+                  </div>
+                  <div>
+                      <label for="validation" class="form-label">Heure Fin</label>
+                      <input type="number" class="form-control" id="heuref" required>
+                  </div>
+                </div>
+                </div>
+                <div class="ouv_ferm">
+                  <button type="submit" id="ajouter" >Ajouter</button>
+                  <button type="reset"  id="anuller" >Annuler</button>
               </div>
+              </form>
+              
+            </div>
+            </div>
               <div class="box" id="monday"></div>
             </div>
-
               <div class="m">
                 <div class="mardi">
-                  <p>Mardi</p>
+                  <p>Mardi <i class="fa-sharp fa-solid fa-plus" style="color: #22511f;" id="icons"></i></p>
                 </div>
                 <div class="box" id="thuesday" ></div>
               </div>
                 <div class="mer">
                   <div class="mercredi">
-                    <p>Mercredi</p>
+                    <p>Mercredi <i class="fa-sharp fa-solid fa-plus" style="color: #22511f;" id="icons"></i></p>
                 </div>
-                <div class="box"></div>
+                <div class="box"  id="merc"></div>
                 </div>
-  
                 <div class="j">
                   <div class="jeudi">
-                    <p>Jeudi</p>
+                    <p>Jeudi <i class="fa-sharp fa-solid fa-plus" style="color: #22511f;"  id="icons"></i></p>
                   </div>
-                  <div class="box"></div>
+                  <div class="box"  id="jen"></div>
                 </div>
                 <div class="v">
                   <div class="vendredi">
-                    <p>Vendredi</p>
+                    <p>Vendredi <i class="fa-sharp fa-solid fa-plus" style="color: #22511f;"  id="icons"></i></p>
                   </div>
-                  <div class="box"></div>
+                  <div class="box" id="vend"></div>
                 </div>
                 <div class="s">
                   <div class="samedi">
-                    <p>Samedi</p>
+                    <p>Samedi <i class="fa-sharp fa-solid fa-plus" style="color: #22511f;"  id="icons"></i></p>
                   </div>
                   <div class="box"></div>
                 </div>
-            </div>
           </div>
       </div>
     </div>
   </main>
+</body>
+</html>
   <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
